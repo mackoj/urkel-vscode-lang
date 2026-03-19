@@ -1,0 +1,56 @@
+{
+  "name": "Urkel",
+  "scopeName": "source.urkel",
+  "fileTypes": [
+    "urkel"
+  ],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#directives" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.urkel",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "directives": {
+      "patterns": [
+        {
+          "name": "keyword.control.directive.urkel",
+          "match": "^\\s*@[A-Za-z_][A-Za-z0-9_]*"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.urkel",
+          "match": "\\b(init|state|final|machine|import|imports|states|transitions|factory)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.urkel",
+          "match": "\"([^\"\\\\]|\\\\.)*\""
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.urkel",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    }
+  }
+}

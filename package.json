@@ -1,0 +1,68 @@
+{
+  "name": "urkel-language-support",
+  "displayName": "Urkel Language Support",
+  "description": "Recognize .urkel files and connect them to urkel-lsp.",
+  "version": "0.0.1",
+  "publisher": "urkel",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:urkel"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "urkel",
+        "aliases": [
+          "Urkel",
+          "urkel"
+        ],
+        "extensions": [
+          ".urkel"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "urkel",
+        "scopeName": "source.urkel",
+        "path": "./syntaxes/urkel.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "urkel.languageServer.restart",
+        "title": "Urkel: Restart Language Server"
+      }
+    ],
+    "configuration": {
+      "title": "Urkel",
+      "properties": {
+        "urkel.languageServer.path": {
+          "type": "string",
+          "default": "urkel-lsp",
+          "description": "Path to the urkel-lsp executable."
+        },
+        "urkel.languageServer.args": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "description": "Extra arguments passed to urkel-lsp."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "node --check extension.js",
+    "test": "node --check extension.js",
+    "vsix": "bash scripts/package-vsix.sh"
+  }
+}
