@@ -1,17 +1,16 @@
 # Urkel VS Code Language Support
 
-This extension makes VS Code recognize `*.urkel` files as the `urkel` language and launches `urkel-lsp` while you edit.
+This extension lives in `https://github.com/mackoj/urkel-vscode-lang`. It makes VS Code recognize `*.urkel` files as the `urkel` language and launches `urkel-lsp` while you edit.
 
 ## Setup flow
 
 1. Build `urkel-lsp` from the Urkel repository:
 
    ```bash
-   cd /Users/mac-JMACKO01/Developer/Urkel
    swift build --product urkel-lsp
    ```
 
-2. Install or run this extension from `/Users/mac-JMACKO01/Developer/urkel-lsp`:
+2. Install or run this extension from the `mackoj/urkel-vscode-lang` repository:
 
    - press `F5` to launch an Extension Development Host, or
    - package a `.vsix` and install it in VS Code.
@@ -20,7 +19,7 @@ This extension makes VS Code recognize `*.urkel` files as the `urkel` language a
 
    ```json
    {
-     "urkel.languageServer.path": "/Users/mac-JMACKO01/Developer/Urkel/.build/debug/urkel-lsp"
+     "urkel.languageServer.path": "/Users/Account/Developer/Urkel/.build/debug/urkel-lsp"
    }
    ```
 
@@ -49,4 +48,4 @@ Open a `.urkel` file in VS Code. The file should use the `urkel` language id, an
 
 ## Notes
 
-The parser and validator logic live in the Urkel repository. This extension only launches the server binary and speaks LSP to it.
+The parser and validator logic live in `mackoj/urkel`. This extension only launches the server binary and speaks LSP to it.
