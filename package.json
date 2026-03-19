@@ -2,7 +2,7 @@
   "name": "urkel-language-support",
   "displayName": "Urkel Language Support",
   "description": "Recognize .urkel files and connect them to urkel-lsp.",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "publisher": "urkel",
   "engines": {
     "vscode": "^1.85.0"
